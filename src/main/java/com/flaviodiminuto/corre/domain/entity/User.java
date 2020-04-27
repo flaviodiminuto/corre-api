@@ -29,7 +29,7 @@ public class User{
 	@Column(name = "login")
 	private String login;
 	
-	@Column(name = "password")
+	@Column(name = "\"password\"")
 	private String password;
 	
 	@Column(name = "created_date")
