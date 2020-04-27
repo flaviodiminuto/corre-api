@@ -75,7 +75,7 @@ public class ControllerUser {
     		logger.info(String.format("Update user sucessful - ID : %d", presenterUser.getId()));
     		return ResponseEntity.ok().body(presenterUser);
     	}else {
-    		logger.info(String.format("Update user stopped - User not found - ID : %d", String.valueOf(presenterUser.getId())));
+    		logger.info(String.format("Update user stopped - User not found - ID : %s", String.valueOf(presenterUser.getId())));
     		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(USER_NOT_FOUND_MESSAGE);
     	}
     }
@@ -90,7 +90,7 @@ public class ControllerUser {
     		logger.info(String.format("Delete user sucessful - ID : %d", presenterUser.getId()));
     		return ResponseEntity.ok().body("{\"message\":\"User deleted\"}");
     	}else {
-    		logger.info(String.format("Delete user stopped - User not found - ID : %d", String.valueOf(presenterUser.getId())));
+    		logger.info(String.format("Delete user stopped - User not found - ID : %s", String.valueOf(presenterUser.getId())));
     		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(USER_NOT_FOUND_MESSAGE);
     	}
     }
