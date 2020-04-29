@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.flaviodiminuto.corre.domain.entity.User;
+import com.flaviodiminuto.corre.presenter.PresenterRegisterUser;
 import com.flaviodiminuto.corre.presenter.PresenterUser;
 import com.flaviodiminuto.corre.repository.RepositoryUser;
 
@@ -27,14 +28,14 @@ public class MapperUser {
 	RepositoryUser repository;
 	
 	/**
-	 * Mapeia uma instancia do tipo {@link PresenterUser} nao persistido para uma instancia do tipo {@link User}<br>
+	 * Mapeia uma instancia do tipo {@link PresenterRegisterUser} nao persistido para uma instancia do tipo {@link User}<br>
 	 * o campo <b>"Presenter.id"</b> é ignorado
-	 * @param presenterUser -  Recebe um um {@link PresenterUser}
+	 * @param presenterUser -  Recebe um um {@link PresenterRegisterUser}
 	 * @return retornar um {@link User} <br/>
 	 * sem id<br/>
 	 * com data atual como data de criacao <br/>
 	 */
-	public User presenterToNewEntity(PresenterUser presenterUser) {
+	public User presenterToNewEntity(PresenterRegisterUser presenterUser) {
 		User user = new User();
 		user.setLogin(presenterUser.getLogin());
 		user.setPassword(presenterUser.getPassword());
